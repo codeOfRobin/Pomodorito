@@ -14,37 +14,51 @@ class ViewController: UIViewController {
 	
 	@IBOutlet weak var timerLabel: UILabel!
 	
-	var timerLabelStartSecond = 50
-	var timerLabelStartMinute = 1
-	let startDate = NSDate()
+	var timerLabelStartSecond = 10
+	var timerLabelStartMinute = 0
+	var startDate = NSDate()
 	var timeToFinish = NSDate()
 	
-	override func viewDidLoad() {
-		super.viewDidLoad()
-		// Do any additional setup after loading the view, typically from a nib.
+	@IBOutlet weak var timePicker: UIDatePicker!
+	
+	@IBAction func setTimer(sender: AnyObject)
+	{
+		startDate = NSDate()
+		let updateTimer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(ViewController.updateFunction(_:)), userInfo: nil, repeats: true)
+		
+		NSRunLoop.currentRunLoop().addTimer(updateTimer, forMode: NSRunLoopCommonModes)
 		let components = NSDateComponents()
-		components.minute = timerLabelStartMinute
-		components.second = timerLabelStartSecond
+//		components.second = Int(timePicker.countDownDuration)
+		components.second = 10
 		if let finishTime = NSCalendar.currentCalendar().dateByAddingComponents(components, toDate: startDate, options: []) {
 			timeToFinish = finishTime
 		}
-		let updateTimer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(ViewController.updateFunction(_:)), userInfo: nil, repeats: true)
-		NSRunLoop.currentRunLoop().addTimer(updateTimer, forMode: NSRunLoopCommonModes)
+		let notification = UILocalNotification()
+		notification.alertAction = "Done"
+		notification.alertBody = "Your work period is over!"
+		notification.applicationIconBadgeNumber = 1
+		notification.fireDate = timeToFinish
+		notification.timeZone = NSTimeZone.defaultTimeZone()
+		UIApplication.sharedApplication().scheduleLocalNotification(notification)
 	}
-
-	func updateFunction(sender: NSTimer)
-	{
+	override func viewDidLoad() {
+		super.viewDidLoad()
+//		PomodoroTracker.sharedPomodoroTracker.saveToDB()
+		// Do any additional setup after loading the view, typically from a nib.
+		timePicker.datePickerMode = .CountDownTimer
+		timePicker.timeZone =  NSTimeZone(abbreviation: "UTC")
+	}
+	
+	func updateFunction(sender: NSTimer) {
 		let calendar = NSCalendar.currentCalendar()
-		print(calendar.components(.Second, fromDate: self.startDate, toDate: NSDate(), options: []))
 		let seconds = calendar.components(.Second, fromDate: NSDate(), toDate: self.timeToFinish, options: []).second%60
 		let minutes = calendar.components(.Minute, fromDate: NSDate(), toDate: self.timeToFinish, options: []).minute
 		timerLabel.text = "\(minutes):\(seconds)"
 	}
-	func printTimeElapsed()
-	{
+	func printTimeElapsed() {
 		let calendar = NSCalendar.currentCalendar()
 		print(calendar.components(.Second, fromDate: self.startDate, toDate: NSDate(), options: []))
-		delay(2) { 
+		delay(2) {
 			self.printTimeElapsed()
 		}
 	}
@@ -56,7 +70,7 @@ class ViewController: UIViewController {
 			),
 			dispatch_get_main_queue(), closure)
 	}
-
+	
 	override func didReceiveMemoryWarning() {
 		super.didReceiveMemoryWarning()
 		// Dispose of any resources that can be recreated.

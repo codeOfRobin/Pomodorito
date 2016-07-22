@@ -17,25 +17,44 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p36-6k-DFg">
-                                <rect key="frame" x="279" y="28" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select a work timer!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p36-6k-DFg">
+                                <rect key="frame" x="224" y="28" width="152" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="4" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pLE-Nq-HEV">
+                                <rect key="frame" x="140" y="79" width="320" height="216"/>
+                                <date key="date" timeIntervalSinceReferenceDate="490818620.80509502">
+                                    <!--2016-07-21 18:30:20 +0000-->
+                                </date>
+                            </datePicker>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ybc-4c-wDJ">
+                                <rect key="frame" x="267" y="315" width="67" height="30"/>
+                                <state key="normal" title="Set Timer"/>
+                                <connections>
+                                    <action selector="setTimer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Kex-PG-gU3"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="ybc-4c-wDJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Cie-AF-fSL"/>
+                            <constraint firstItem="ybc-4c-wDJ" firstAttribute="top" secondItem="pLE-Nq-HEV" secondAttribute="bottom" constant="20" id="Uvg-tS-ffu"/>
                             <constraint firstItem="p36-6k-DFg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Xgn-xU-ahw"/>
+                            <constraint firstItem="pLE-Nq-HEV" firstAttribute="top" secondItem="p36-6k-DFg" secondAttribute="bottom" constant="30" id="iNV-Xw-ahW"/>
+                            <constraint firstItem="pLE-Nq-HEV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nCq-EP-a24"/>
                             <constraint firstItem="p36-6k-DFg" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="wvG-NR-eVg"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="timePicker" destination="pLE-Nq-HEV" id="n6h-pj-ord"/>
                         <outlet property="timerLabel" destination="p36-6k-DFg" id="W6C-cj-IEj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="433" y="289"/>
         </scene>
     </scenes>
 </document>

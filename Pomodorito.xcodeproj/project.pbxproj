@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D0EE59B1D40E45300BB6822 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0EE59A1D40E45300BB6822 /* Constants.swift */; };
+		0D0EE59D1D4202A800BB6822 /* PomodoroTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0EE59C1D4202A800BB6822 /* PomodoroTracker.swift */; };
+		0D0EE5A41D42197F00BB6822 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D0EE59E1D42197000BB6822 /* Realm.framework */; };
+		0D0EE5A51D42197F00BB6822 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0D0EE59E1D42197000BB6822 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0D0EE5A61D42197F00BB6822 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D0EE59F1D42197000BB6822 /* RealmSwift.framework */; };
+		0D0EE5A71D42197F00BB6822 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0D0EE59F1D42197000BB6822 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0D0EE5A81D42197F00BB6822 /* SwiftCharts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D0EE5A01D42197000BB6822 /* SwiftCharts.framework */; };
+		0D0EE5A91D42197F00BB6822 /* SwiftCharts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0D0EE5A01D42197000BB6822 /* SwiftCharts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0D6675241D4000B1004EEF76 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6675231D4000B1004EEF76 /* AppDelegate.swift */; };
 		0D6675261D4000B1004EEF76 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6675251D4000B1004EEF76 /* ViewController.swift */; };
 		0D6675291D4000B1004EEF76 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D6675271D4000B1004EEF76 /* Main.storyboard */; };
@@ -33,7 +41,28 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		0D0EE5991D40E41400BB6822 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				0D0EE5A91D42197F00BB6822 /* SwiftCharts.framework in Embed Frameworks */,
+				0D0EE5A71D42197F00BB6822 /* RealmSwift.framework in Embed Frameworks */,
+				0D0EE5A51D42197F00BB6822 /* Realm.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		0D0EE59A1D40E45300BB6822 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		0D0EE59C1D4202A800BB6822 /* PomodoroTracker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PomodoroTracker.swift; sourceTree = "<group>"; };
+		0D0EE59E1D42197000BB6822 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
+		0D0EE59F1D42197000BB6822 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
+		0D0EE5A01D42197000BB6822 /* SwiftCharts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftCharts.framework; path = Carthage/Build/iOS/SwiftCharts.framework; sourceTree = "<group>"; };
 		0D6675201D4000B1004EEF76 /* Pomodorito.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pomodorito.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D6675231D4000B1004EEF76 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0D6675251D4000B1004EEF76 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -54,6 +83,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D0EE5A81D42197F00BB6822 /* SwiftCharts.framework in Frameworks */,
+				0D0EE5A61D42197F00BB6822 /* RealmSwift.framework in Frameworks */,
+				0D0EE5A41D42197F00BB6822 /* Realm.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,6 +109,9 @@
 		0D6675171D4000B1004EEF76 = {
 			isa = PBXGroup;
 			children = (
+				0D0EE59E1D42197000BB6822 /* Realm.framework */,
+				0D0EE59F1D42197000BB6822 /* RealmSwift.framework */,
+				0D0EE5A01D42197000BB6822 /* SwiftCharts.framework */,
 				0D6675221D4000B1004EEF76 /* Pomodorito */,
 				0D6675371D4000B1004EEF76 /* PomodoritoTests */,
 				0D6675421D4000B1004EEF76 /* PomodoritoUITests */,
@@ -97,8 +132,10 @@
 		0D6675221D4000B1004EEF76 /* Pomodorito */ = {
 			isa = PBXGroup;
 			children = (
+				0D0EE59C1D4202A800BB6822 /* PomodoroTracker.swift */,
 				0D6675231D4000B1004EEF76 /* AppDelegate.swift */,
 				0D6675251D4000B1004EEF76 /* ViewController.swift */,
+				0D0EE59A1D40E45300BB6822 /* Constants.swift */,
 				0D6675271D4000B1004EEF76 /* Main.storyboard */,
 				0D66752A1D4000B1004EEF76 /* Assets.xcassets */,
 				0D66752C1D4000B1004EEF76 /* LaunchScreen.storyboard */,
@@ -135,6 +172,8 @@
 				0D66751C1D4000B1004EEF76 /* Sources */,
 				0D66751D1D4000B1004EEF76 /* Frameworks */,
 				0D66751E1D4000B1004EEF76 /* Resources */,
+				0D0EE5991D40E41400BB6822 /* Embed Frameworks */,
+				0D0EE5AB1D42199800BB6822 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -251,6 +290,24 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0D0EE5AB1D42199800BB6822 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		0D66751C1D4000B1004EEF76 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -258,6 +315,8 @@
 			files = (
 				0D6675261D4000B1004EEF76 /* ViewController.swift in Sources */,
 				0D6675241D4000B1004EEF76 /* AppDelegate.swift in Sources */,
+				0D0EE59B1D40E45300BB6822 /* Constants.swift in Sources */,
+				0D0EE59D1D4202A800BB6822 /* PomodoroTracker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -401,6 +460,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Pomodorito/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.comicsanshq.Pomodorito;
@@ -412,6 +475,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Pomodorito/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.comicsanshq.Pomodorito;
@@ -484,6 +551,7 @@
 				0D66754A1D4000B1004EEF76 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0D66754B1D4000B1004EEF76 /* Build configuration list for PBXNativeTarget "PomodoritoTests" */ = {
 			isa = XCConfigurationList;
@@ -492,6 +560,7 @@
 				0D66754D1D4000B1004EEF76 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0D66754E1D4000B1004EEF76 /* Build configuration list for PBXNativeTarget "PomodoritoUITests" */ = {
 			isa = XCConfigurationList;
@@ -500,6 +569,7 @@
 				0D6675501D4000B1004EEF76 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
