@@ -18,43 +18,69 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select a work timer!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p36-6k-DFg">
-                                <rect key="frame" x="224" y="28" width="152" height="21"/>
+                                <rect key="frame" x="224" y="20" width="152" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="4" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pLE-Nq-HEV">
-                                <rect key="frame" x="140" y="79" width="320" height="216"/>
-                                <date key="date" timeIntervalSinceReferenceDate="490818620.80509502">
-                                    <!--2016-07-21 18:30:20 +0000-->
-                                </date>
-                            </datePicker>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ybc-4c-wDJ">
-                                <rect key="frame" x="267" y="315" width="67" height="30"/>
+                                <rect key="frame" x="267" y="550" width="67" height="30"/>
                                 <state key="normal" title="Set Timer"/>
                                 <connections>
                                     <action selector="setTimer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Kex-PG-gU3"/>
                                 </connections>
                             </button>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="mcH-nT-mua">
+                                <rect key="frame" x="140" y="326" width="320" height="216"/>
+                                <date key="date" timeIntervalSinceReferenceDate="490908495.97689599">
+                                    <!--2016-07-22 19:28:15 +0000-->
+                                </date>
+                            </datePicker>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set a play timer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8lk-L3-nog">
+                                <rect key="frame" x="241" y="297" width="119" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="4" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pLE-Nq-HEV">
+                                <rect key="frame" x="140" y="49" width="320" height="216"/>
+                                <date key="date" timeIntervalSinceReferenceDate="490818620.80509502">
+                                    <!--2016-07-21 18:30:20 +0000-->
+                                </date>
+                            </datePicker>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="ybc-4c-wDJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Cie-AF-fSL"/>
+                            <constraint firstItem="ybc-4c-wDJ" firstAttribute="top" secondItem="mcH-nT-mua" secondAttribute="bottom" constant="8" id="KAZ-IH-00M"/>
+                            <constraint firstItem="mcH-nT-mua" firstAttribute="top" secondItem="8lk-L3-nog" secondAttribute="bottom" constant="8" id="N1p-yp-CCV"/>
+                            <constraint firstItem="mcH-nT-mua" firstAttribute="top" secondItem="pLE-Nq-HEV" secondAttribute="bottom" constant="67" id="U1O-l0-SRe"/>
                             <constraint firstItem="ybc-4c-wDJ" firstAttribute="top" secondItem="pLE-Nq-HEV" secondAttribute="bottom" constant="20" id="Uvg-tS-ffu"/>
                             <constraint firstItem="p36-6k-DFg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Xgn-xU-ahw"/>
-                            <constraint firstItem="pLE-Nq-HEV" firstAttribute="top" secondItem="p36-6k-DFg" secondAttribute="bottom" constant="30" id="iNV-Xw-ahW"/>
+                            <constraint firstItem="8lk-L3-nog" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Xhw-xV-zqf"/>
+                            <constraint firstItem="mcH-nT-mua" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="adc-eN-Grf"/>
+                            <constraint firstItem="pLE-Nq-HEV" firstAttribute="top" secondItem="p36-6k-DFg" secondAttribute="bottom" constant="8" id="iNV-Xw-ahW"/>
                             <constraint firstItem="pLE-Nq-HEV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nCq-EP-a24"/>
-                            <constraint firstItem="p36-6k-DFg" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="wvG-NR-eVg"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ybc-4c-wDJ" secondAttribute="bottom" constant="20" id="nOr-6A-ggz"/>
+                            <constraint firstItem="p36-6k-DFg" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="wvG-NR-eVg"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="U1O-l0-SRe"/>
+                                <exclude reference="Uvg-tS-ffu"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
-                        <outlet property="timePicker" destination="pLE-Nq-HEV" id="n6h-pj-ord"/>
-                        <outlet property="timerLabel" destination="p36-6k-DFg" id="W6C-cj-IEj"/>
+                        <outlet property="playTimePicker" destination="mcH-nT-mua" id="Jy3-AL-AVa"/>
+                        <outlet property="playTimerLabel" destination="8lk-L3-nog" id="1JJ-p0-sxq"/>
+                        <outlet property="workTimePicker" destination="pLE-Nq-HEV" id="Xuo-BN-bik"/>
+                        <outlet property="workTimerLabel" destination="p36-6k-DFg" id="9Mc-40-NXi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="433" y="289"/>
+            <point key="canvasLocation" x="433" y="301"/>
         </scene>
     </scenes>
 </document>

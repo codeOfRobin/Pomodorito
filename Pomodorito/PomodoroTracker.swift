@@ -41,6 +41,15 @@ class PomodoroTracker: Object{
 			playTimeInterval = NSTimeInterval(minutes)
 		}
 	}
+	
+	func reinitPomodoro()
+	{
+		state = .HasntStarted
+		workStartTime = NSDate()
+		workTimeInterval = NSTimeInterval(integerLiteral: 25*60)
+		playStartTime = NSDate()
+		playTimeInterval = NSTimeInterval(integerLiteral: 5*60)
+	}
 	func saveToDB() {
 		let realm = try! Realm()
 		try! realm.write {

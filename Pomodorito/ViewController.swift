@@ -12,14 +12,29 @@ class ViewController: UIViewController {
 	
 	var chart: Chart?
 	
-	@IBOutlet weak var timerLabel: UILabel!
+	@IBOutlet weak var workTimerLabel: UILabel!
+	@IBOutlet weak var playTimerLabel: UILabel!
+
+	@IBOutlet weak var workTimePicker: UIDatePicker!
+	@IBOutlet weak var playTimePicker: UIDatePicker!
 	
 	var timerLabelStartSecond = 10
 	var timerLabelStartMinute = 0
 	var startDate = NSDate()
 	var timeToFinish = NSDate()
 	
-	@IBOutlet weak var timePicker: UIDatePicker!
+	
+	func setupLocalNotification() {
+		let notification = UILocalNotification()
+		notification.alertAction = "Done"
+		notification.alertBody = "Your work period is over!"
+		notification.applicationIconBadgeNumber = 1
+		notification.fireDate = timeToFinish
+		notification.timeZone = NSTimeZone.defaultTimeZone()
+		notification.soundName = UILocalNotificationDefaultSoundName
+		notification.soundName = "asdf.aif"
+		UIApplication.sharedApplication().scheduleLocalNotification(notification)
+	}
 	
 	@IBAction func setTimer(sender: AnyObject)
 	{
@@ -33,43 +48,41 @@ class ViewController: UIViewController {
 		if let finishTime = NSCalendar.currentCalendar().dateByAddingComponents(components, toDate: startDate, options: []) {
 			timeToFinish = finishTime
 		}
-		let notification = UILocalNotification()
-		notification.alertAction = "Done"
-		notification.alertBody = "Your work period is over!"
-		notification.applicationIconBadgeNumber = 1
-		notification.fireDate = timeToFinish
-		notification.timeZone = NSTimeZone.defaultTimeZone()
-		UIApplication.sharedApplication().scheduleLocalNotification(notification)
+		setupLocalNotification()
 	}
 	override func viewDidLoad() {
 		super.viewDidLoad()
-//		PomodoroTracker.sharedPomodoroTracker.saveToDB()
 		// Do any additional setup after loading the view, typically from a nib.
-		timePicker.datePickerMode = .CountDownTimer
-		timePicker.timeZone =  NSTimeZone(abbreviation: "UTC")
+		workTimePicker.datePickerMode = .CountDownTimer
+		workTimePicker.timeZone =  NSTimeZone(abbreviation: "UTC")
+		playTimePicker.datePickerMode = .CountDownTimer
+		playTimePicker.timeZone =  NSTimeZone(abbreviation: "UTC")
+		PomodoroTracker.sharedPomodoroTracker.reinitPomodoro()
+		//		PomodoroTracker.sharedPomodoroTracker.saveToDB()
 	}
 	
 	func updateFunction(sender: NSTimer) {
 		let calendar = NSCalendar.currentCalendar()
 		let seconds = calendar.components(.Second, fromDate: NSDate(), toDate: self.timeToFinish, options: []).second%60
 		let minutes = calendar.components(.Minute, fromDate: NSDate(), toDate: self.timeToFinish, options: []).minute
-		timerLabel.text = "\(minutes):\(seconds)"
+		workTimerLabel.text = "\(minutes):\(seconds)"
 	}
-	func printTimeElapsed() {
-		let calendar = NSCalendar.currentCalendar()
-		print(calendar.components(.Second, fromDate: self.startDate, toDate: NSDate(), options: []))
-		delay(2) {
-			self.printTimeElapsed()
-		}
-	}
-	func delay(delay:Double, closure:()->()) {
-		dispatch_after(
-			dispatch_time(
-				DISPATCH_TIME_NOW,
-				Int64(delay * Double(NSEC_PER_SEC))
-			),
-			dispatch_get_main_queue(), closure)
-	}
+	
+//	func printTimeElapsed() {
+//		let calendar = NSCalendar.currentCalendar()
+//		print(calendar.components(.Second, fromDate: self.startDate, toDate: NSDate(), options: []))
+//		delay(2) {
+//			self.printTimeElapsed()
+//		}
+//	}
+//	func delay(delay:Double, closure:()->()) {
+//		dispatch_after(
+//			dispatch_time(
+//				DISPATCH_TIME_NOW,
+//				Int64(delay * Double(NSEC_PER_SEC))
+//			),
+//			dispatch_get_main_queue(), closure)
+//	}
 	
 	override func didReceiveMemoryWarning() {
 		super.didReceiveMemoryWarning()

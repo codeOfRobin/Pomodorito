@@ -15,6 +15,7 @@
 		0D0EE5A71D42197F00BB6822 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0D0EE59F1D42197000BB6822 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0D0EE5A81D42197F00BB6822 /* SwiftCharts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D0EE5A01D42197000BB6822 /* SwiftCharts.framework */; };
 		0D0EE5A91D42197F00BB6822 /* SwiftCharts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0D0EE5A01D42197000BB6822 /* SwiftCharts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0D2AF6821D42B4F000287D3A /* asdf.aif in Resources */ = {isa = PBXBuildFile; fileRef = 0D2AF6811D42B4F000287D3A /* asdf.aif */; };
 		0D6675241D4000B1004EEF76 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6675231D4000B1004EEF76 /* AppDelegate.swift */; };
 		0D6675261D4000B1004EEF76 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6675251D4000B1004EEF76 /* ViewController.swift */; };
 		0D6675291D4000B1004EEF76 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D6675271D4000B1004EEF76 /* Main.storyboard */; };
@@ -63,6 +64,7 @@
 		0D0EE59E1D42197000BB6822 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		0D0EE59F1D42197000BB6822 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 		0D0EE5A01D42197000BB6822 /* SwiftCharts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftCharts.framework; path = Carthage/Build/iOS/SwiftCharts.framework; sourceTree = "<group>"; };
+		0D2AF6811D42B4F000287D3A /* asdf.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = asdf.aif; sourceTree = "<group>"; };
 		0D6675201D4000B1004EEF76 /* Pomodorito.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pomodorito.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D6675231D4000B1004EEF76 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0D6675251D4000B1004EEF76 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 				0D6675231D4000B1004EEF76 /* AppDelegate.swift */,
 				0D6675251D4000B1004EEF76 /* ViewController.swift */,
 				0D0EE59A1D40E45300BB6822 /* Constants.swift */,
+				0D2AF6811D42B4F000287D3A /* asdf.aif */,
 				0D6675271D4000B1004EEF76 /* Main.storyboard */,
 				0D66752A1D4000B1004EEF76 /* Assets.xcassets */,
 				0D66752C1D4000B1004EEF76 /* LaunchScreen.storyboard */,
@@ -268,6 +271,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D2AF6821D42B4F000287D3A /* asdf.aif in Resources */,
 				0D66752E1D4000B1004EEF76 /* LaunchScreen.storyboard in Resources */,
 				0D66752B1D4000B1004EEF76 /* Assets.xcassets in Resources */,
 				0D6675291D4000B1004EEF76 /* Main.storyboard in Resources */,
