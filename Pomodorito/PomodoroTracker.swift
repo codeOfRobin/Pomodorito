@@ -42,8 +42,7 @@ class PomodoroTracker: Object{
 		}
 	}
 	
-	func reinitPomodoro()
-	{
+	func reinitPomodoro() {
 		state = .HasntStarted
 		workStartTime = NSDate()
 		workTimeInterval = NSTimeInterval(integerLiteral: 25*60)

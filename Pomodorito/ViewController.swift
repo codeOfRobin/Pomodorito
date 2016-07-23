@@ -39,8 +39,7 @@ class ViewController: UIViewController {
 		UIApplication.sharedApplication().scheduleLocalNotification(notification)
 	}
 	
-	@IBAction func setTimer(sender: AnyObject)
-	{
+	@IBAction func setTimer(sender: AnyObject) {
 		startDate = NSDate()
 		let updateTimer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(ViewController.updateFunction(_:)), userInfo: nil, repeats: true)
 		
