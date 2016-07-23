@@ -14,13 +14,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	var window: UIWindow?
 	
 	func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-		var types: UIUserNotificationType = UIUserNotificationType()
-		types.insert(UIUserNotificationType.Alert)
-		types.insert(UIUserNotificationType.Badge)
+		let action1 = UIMutableUserNotificationAction()
+		action1.identifier = "ACTION_A"
+		action1.title = "A"
+		action1.activationMode = .Background
 		
-		let settings: UIUserNotificationSettings = UIUserNotificationSettings(forTypes: types, categories: nil)
+		let action2 = UIMutableUserNotificationAction()
+		action2.identifier = "ACTION_B"
+		action2.title = "B"
+		action2.activationMode = .Background
 		
-		UIApplication.sharedApplication().registerUserNotificationSettings(settings)
+		let category = UIMutableUserNotificationCategory()
+		category.identifier = "ANSWERS_CATEGORY"
+		category.setActions([action1, action2], forContext: .Default)
+		category.setActions([action1, action2], forContext: .Minimal)
+		
+		
+		let categories = Set(arrayLiteral: category)
+		let settingsRequest = UIUserNotificationSettings(forTypes: [.Alert, .Sound, .Badge], categories: categories)
+		UIApplication.sharedApplication().registerUserNotificationSettings(settingsRequest)
 		// Override point for customization after application launch.
 		return true
 	}

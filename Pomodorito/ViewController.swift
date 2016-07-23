@@ -33,6 +33,9 @@ class ViewController: UIViewController {
 		notification.timeZone = NSTimeZone.defaultTimeZone()
 		notification.soundName = UILocalNotificationDefaultSoundName
 		notification.soundName = "asdf.aif"
+		
+		notification.category = "ANSWERS_CATEGORY"
+		
 		UIApplication.sharedApplication().scheduleLocalNotification(notification)
 	}
 	
